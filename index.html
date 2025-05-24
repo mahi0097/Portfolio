@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mark - Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="first.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <script>
+      window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        navLinks.forEach(link => {
+          link.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default link behavior (navigation)
+
+            const targetSection = document.getElementById(link.hash.substring(1)); // Get the section based on the link's hash
+
+            if (targetSection) {
+              // Scroll to the target section
+              targetSection.scrollIntoView({
+                behavior: 'auto', // or 'smooth'
+                block: 'start'
+              });
+            }
+          });
+        });
+      });
+    </script>
+
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <img src="logo.jpg" alt="Logo" />
+          </div>
+          <ul class="nav-links">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" >
+      <div class="hero-content">
+        <h1>
+          I'm Mahi<br />
+          <span>Web Developer & AI Enthusiast</span>
+        </h1>
+      </div>
+    </section>
+    <section class="intro-section"id="about">
+      <div class="container">
+        <div class="intro-text">
+          <h2>Hey there! I'm Mahi,</h2>
+          <p>
+            A passionate tech explorer diving into the worlds of Web
+            Development, Data Structures, and AI/ML. I enjoy turning ideas into
+            interactive digital experiences — from designing user-friendly
+            websites to building smart solutions with code. Let's build
+            something amazing together!
+          </p>
+        </div>
+
+        <div class="experience-grid">
+          <div class="experience-item">
+            <h4>2022 – Present</h4>
+            <h3>B.Tech in AI & ML</h3>
+            <p>Allenhouse Institute of Technology, Kanpur</p>
+          </div>
+          <div class="experience-item">
+            <h4>2020 – 2021</h4>
+            <h3>Intermediate (12th)</h3>
+            <p>PDK Girls Inter College, Kanpur</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section  class="services-section" id="skills">
+      <h2 class="section-title1">My Key Skills</h2>
+      <p class="section-subtitle">
+        Over the years, I have developed a solid set of skills that empower me
+        to solve technical challenges and collaborate effectively with teams.
+      </p>
+
+      <div class="services-container">
+        <div class="service-card">
+          <div class="icon">🖥️</div>
+          <h3>Technical Skills</h3>
+          <p>
+            Proficient in Python, Data Structures & Algorithms, React, SQL, and
+            AI/ML fundamentals. Experienced in building web applications,
+            handling databases, and solving complex programming problems.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">💡</div>
+          <h3>Problem Solving</h3>
+          <p>
+            Strong analytical thinking and technical problem-solving abilities,
+            allowing me to debug efficiently and optimize solutions for better
+            performance.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🤝</div>
+          <h3>Soft Skills</h3>
+          <p>
+            Effective communication, teamwork, and adaptability. I value
+            continuous learning and work well in collaborative environments to
+            achieve project goals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-work-section">
+      <div class="why-work-container">
+        <div class="why-work-image">
+          <img src="working_man.png" alt="Working professional" />
+        </div>
+        <div class="why-work-content">
+          <h2>Why Work With Me</h2>
+          <p>
+            I’m a great communicator who invests time to deeply understand
+            client needs and deliver effective solutions.
+          </p>
+
+          <h3>Design Tools</h3>
+          <p>
+            Experienced with Photoshop and Illustrator, and proficient in Figma,
+            Sketch, and Adobe XD for modern design workflows.
+          </p>
+
+          <h3>Development Skills</h3>
+          <p>
+            Daily work with HTML, CSS, JavaScript, Bootstrap, and modern
+            frameworks to build responsive and interactive websites.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-section" aria-label="Projects Section" id="projects">
+      <h2 class="section-title1">Delivered Projects</h2>
+      <p class="section-subtitle">
+        Listed below are some of the most representative projects I've worked
+        on. They range from basic web design for presentation sites to advanced
+        web development for online shops.
+      </p>
+
+      <div class="projects-container" role="list">
+        <!-- Short Projects -->
+        <div class="short-projects">
+          <article class="project-card" role="listitem" tabindex="0">
+            <img src="stone_paper_sessior.png" alt="Stone Paper Scissor Game" />
+            <div class="project-overlay">
+              <h3>Stone Paper Scissor</h3>
+              <p>A simple interactive game to test your luck and strategy.</p>
+              <a href="#" class="btn" tabindex="0">Discover</a>
+            </div>
+          </article>
+
+          <article class="project-card" role="listitem" tabindex="0">
+            <img src="tic_tac_toie.png" alt="Tic Tac Toe Game" />
+            <div class="project-overlay">
+              <h3>Tic Tac Toe</h3>
+              <p>A classic two-player game implemented with JavaScript.</p>
+              <a href="#" class="btn" tabindex="0">Discover</a>
+            </div>
+          </article>
+
+          <article class="project-card" role="listitem" tabindex="0">
+            <img src="password.png" alt="Password Creator" />
+            <div class="project-overlay">
+              <h3>Password Creator</h3>
+              <p>Generate secure passwords with customizable options.</p>
+              <a href="#" class="btn" tabindex="0">Discover</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Big Projects -->
+        <div class="big-projects">
+          <article class="project-card" role="listitem" tabindex="0">
+            <img src="job_portail.png" alt="Job Portal" />
+            <div class="project-overlay">
+              <h3>Job Portal</h3>
+              <p>
+                A fully functional job portal website with user authentication
+                and job management.
+              </p>
+              <a href="#" class="btn" tabindex="0">Discover</a>
+            </div>
+          </article>
+
+          <article class="project-card" role="listitem" tabindex="0">
+            <img src="coupan_sharing.png" alt="Coupon Sharing Website" />
+            <div class="project-overlay">
+              <h3>Coupon Sharing Website</h3>
+              <p>
+                A platform for sharing and discovering discount coupons easily.
+              </p>
+              <a href="#" class="btn" tabindex="0">Discover</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="certificates" class="certificates-section">
+      <h2 class="section-title">My Certificates</h2>
+      <p class="section-description">
+        Here are some of the key internships and courses I have completed to
+        build my skills and knowledge.
+      </p>
+
+      <div class="certificates-table">
+        <div class="certificate-row">
+          <div class="certificate-card">
+            <h3>Web Development Internship</h3>
+            <p>Allenhouse Institute of Technology</p>
+            <a
+              href="web_devlopment.jpg"
+              class="btn"
+              target="_blank"
+              >View Certificate</a
+            >
+          </div>
+          <div class="certificate-card">
+            <h3>Python 101 for Data Science</h3>
+            <p>IBM Developer Skills Network</p>
+            <a
+              href="Screenshot_20241205-104008~2.jpg"
+              class="btn"
+              target="_blank"
+              >View Certificate</a
+            >
+          </div>
+          <div class="certificate-card">
+            <h3>HackerRank Basic Python</h3>
+            <p>HackerRank</p>
+            <a href="<!-- URL HERE -->" class="btn" target="_blank"
+              >View Certificate</a
+            >
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="certificate-row">
+          <div class="certificate-card">
+            <h3>DBMS Course</h3>
+            <p>Udemy</p>
+            <a
+              href="UC-c488c66d-bee4-4c23-9547-7131597ecce5.jpg"
+              class="btn"
+              target="_blank"
+              >View Certificate</a
+            >
+          </div>
+          <div class="certificate-card">
+            <h3>AI Tools Workshop</h3>
+            <p>Be10x</p>
+            <a href="<!-- URL HERE -->" class="btn" target="_blank"
+              >View Certificate</a
+            >
+          </div>
+          <div class="certificate-card">
+            <h3>Non-Tech Internship</h3>
+            <p>Younity</p>
+            <a href="Mahi Sharma.pdf" class="btn" target="_blank"
+              >View Certificate</a
+            >
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="certificate-row">
+          <div class="certificate-card">
+            <h3>ML Seminar</h3>
+            <p>Edureka</p>
+            <a
+              href="WhatsApp Image 2024-12-04 at 20.18.54_4f5aa27d.jpg"
+              class="btn"
+              target="_blank"
+              >View Certificate</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Resume Section -->
+    <section id="resume-section" class="resume-section">
+      <div class="resume-content">
+        <h2>View My Resume</h2>
+        <p>
+          Interested in my background and experience? Click below to view or
+          download my resume.
+        </p>
+        <a href="Mahi_Sharma_Resume_Internship.pdf" class="btn" target="_blank"
+          >View Resume</a
+        >
+      </div>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section id="contact" class="contact-section">
+      <div class="contact-content">
+        <h2>Contact Me</h2>
+        <p>
+          Have a project in mind or want to collaborate? Feel free to send me
+          a message.
+        </p>
+        <form
+          action="mailto:your-email@example.com"
+          method="POST"
+          enctype="text/plain"
+          class="contact-form"
+        >
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            placeholder="Describe your idea or project..."
+            required
+          ></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer-section">
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/its_mihi_sharma/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/mahi-sharma-02034a32b" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/mahi0097" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://leetcode.com/u/mahi9696/" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" class="leetcode-icon" />
+        </a>
+      </div>
+
+      <p>© 2025 Your Name. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
